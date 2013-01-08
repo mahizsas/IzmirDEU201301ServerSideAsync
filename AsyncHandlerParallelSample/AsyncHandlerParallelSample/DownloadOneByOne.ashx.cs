@@ -45,7 +45,7 @@ namespace AsyncHandlerParallelSample {
                     string content = await completedTask.Result.Content.ReadAsStringAsync();
                     context.Response.Write(content);
 
-                    // NOTE: You cannot flush concurently. 
+                    // NOTE: You cannot flush concurrently. 
                     // So, flush one at a time.
                     await context.Response.FlushAsync();
                 }
